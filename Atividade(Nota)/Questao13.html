@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She'd dream of para-para-paradise
+        Para-para-paradise
+        Para-para-paradise</title>
+</head>
+<body>
+    <h1>Manipulação de Array de Frutas</h1>
+    
+    <input type="text" id="novaFruta" placeholder="Digite uma fruta">
+    <button onclick="manipularFrutas()">Atualizar Frutas</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        var frutas = ["Maçã dourada com encantamento", "La-la-la-la-la-la-la-La-la-la-la-la-la-la-la-la-la", "Sopa de Cogumelos", "abobora"];
+        function manipularFrutas() {
+            var novaFruta = document.getElementById('novaFruta').value;
+            if (frutas.length > 1) {
+                frutas.splice(1, 1, novaFruta);
+            }
+            document.getElementById('resultado').innerText = 'Frutas atualizadas: ' + frutas.join(', ');
+        }
+    </script>
+</body>
+</html>

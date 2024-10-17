@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When she was just a girl, she expected the world</title>
+</head>
+<body>
+    <h1>Filinha FIFO</h1>
+    <input type="text" id="item" inputmode="numeric" placeholder="Digite item para →">
+    <button onclick="adicionar()">Adicionar à Fila</button>
+    <button onclick="remover()">Remover da Fila</button>
+
+    <h3>Fila:</h3>
+    <p id="fila"></p>
+    
+    <script>
+        var fila = [];
+
+        function remover() {
+            if (fila.length > 0) {
+                fila.shift();
+                atualizarFila();
+            }
+        }
+
+        function adicionar() {
+            var item = document.getElementById('item').value;
+            if (item) {
+                fila.push(item);
+                document.getElementById('item').value = '';
+                atualizarFila();
+            }
+        }
+
+        function atualizarFila() {
+            document.getElementById('fila').innerText = 'Itens na fila: ' + fila.join(', ');
+        }
+    </script>
+</body>
+</html>

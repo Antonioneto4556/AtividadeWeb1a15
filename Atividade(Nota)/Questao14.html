@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>And so lying underneath those stormy skies
+        She'd say, "oh
+        I know the sun must set to rise"</title>
+    <style>
+        body {
+            background-color: white;
+            color: black; 
+            transition: background-image 0.5s ease; 
+            text-align: center;
+            padding: 50px; 
+        }
+        .resultado {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Palindromo</h1>
+    <input type="text" id="texto" placeholder="Digite uma palavra ou frase">
+    <button onclick="verificarPalindromo()">Verificar</button>
+
+    <div id="resultado" class="resultado"></div>
+
+    <script>
+        function ehPalindromo(texto) {
+            var textoLimpo = texto.replace(/\s+/g, '').toLowerCase();
+            var textoInvertido = textoLimpo.split('').reverse().join('');
+            return textoLimpo === textoInvertido;
+        }
+
+        function verificarPalindromo() {
+            var texto = document.getElementById('texto').value;
+            var resultado = ehPalindromo(texto);
+            var resultadoDiv = document.getElementById('resultado');
+            document.body.style.backgroundImage = "url('https://media.tenor.com/BdOHYc9fC9EAAAAM/watermelon.gif')";
+            resultadoDiv.innerText = resultado ? 'É um paluindromo!' : 'Não é um palíndromo.';
+        }
+    </script>
+</body>
+</html>

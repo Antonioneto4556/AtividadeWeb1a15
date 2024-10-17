@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>But it flew away from her reach and the bullets catch in her teeth</title>
+</head>
+<body>
+    <h1>Seguencia de Frutas</h1>
+    <input type="text" id="entradaFrutas" placeholder="Digite as frutas:">
+    <button onclick="ordenarFrutas()">Ordenar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function ordenarFrutas() {
+            var input = document.getElementById('entradaFrutas').value;
+            var frutas = input.split(',').map(function(fruta) {
+                return fruta.trim();
+            });
+
+            for (let i = 0; i < frutas.length; i++) {
+                for (let j = i + 1; j < frutas.length; j++) {
+                    if (frutas[i] > frutas[j]) {
+                        let temp = frutas[i];
+                        frutas[i] = frutas[j];
+                        frutas[j] = temp;
+                    }
+                }
+            }
+
+            document.getElementById('resultado').innerText = 'Frutas ordenadas: ' + frutas.join(', ');
+        }
+    </script>
+</body>
+</html>

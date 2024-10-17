@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>But it flew away from her reach</title>
+</head>
+<body>
+    <h1>Soma de 1 até N</h1>
+    <input type="text" id="numero" inputmode="numeric" placeholder="Digite um número inteiro">
+    <button onclick="calcularSoma()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function somaAteN(n) {
+            var soma = 0;
+            for (var i = 1; i <= n; i++) {
+                soma += i;
+            }
+            return soma;
+        }
+        function calcularSoma() {
+            var numero = Number(document.getElementById('numero').value);
+            
+            if (Number.isInteger(numero) && numero > 0) {
+                var resultado = somaAteN(numero);
+                document.getElementById('resultado').innerText = 'Soma de 1 até ' + numero + ' é: ' + resultado;
+            } else {
+                document.getElementById('resultado').innerText = 'Por favor, digite um número inteiro e positivo.';
+            }
+        }
+    </script>
+</body>
+</html>

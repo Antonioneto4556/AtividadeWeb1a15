@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In the night, the stormy night, away she'd fly</title>
+</head>
+<body>
+    <h1>Quadrados de Números Maiores que 10</h1>
+    <input type="text" id="numeros" inputmode="numeric" placeholder="Digite numeros:">
+    <button onclick="calcularQuadrados()">Calcular Quadrados</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularQuadrados(){
+            var entrada = document.getElementById('numeros').value;
+            var numeros = entrada.split(',').map(Number);
+            var quadrados = numeros.filter(num => num > 10).map(num => num * num);
+            document.getElementById('resultado').innerText = 'Quadrados: ' + quadrados.join(', ');
+        }
+    </script>
+</body>
+</html>

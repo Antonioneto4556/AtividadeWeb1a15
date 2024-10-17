@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para-para-paradise, para-para-paradise, para-para-paradise</title>
+</head>
+<body>
+    <h1>Calculadora de Fatorial</h1>
+    <input type="text" id="numero" inputmode="numeric" placeholder="Digite um número">
+    <button onclick="calcularFatorial()">Calcular Fatorial</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function fatorial(n) {
+            if (n < 0) return "Não existe fatorial para números negativos";
+            if (n === 0 || n === 1) return 1;
+
+            let resultado = 1;
+            for (let i = n; i > 1; i--) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+
+        function calcularFatorial() {
+            var numero = Number(document.getElementById('numero').value);
+            var resultado = fatorial(numero);
+            document.getElementById('resultado').innerText = 'Fatorial: ' + resultado;
+        }
+    </script>
+</body>
+</html>

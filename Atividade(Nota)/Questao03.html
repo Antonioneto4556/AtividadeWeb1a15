@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So she ran away in her sleep and dreamed of</title>
+</head>
+<body>
+    <h1>Verificar Idade</h1>
+    <input type="text" id="idade" inputmode="numeric" placeholder="Digite sua idade">
+    <button onclick="verificarIdade()">Verificar</button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function verificarIdade() {
+            var idade = Number(document.getElementById('idade').value);
+
+            if (idade < 18 && idade > 0) {
+                document.getElementById('mensagem').innerText = 'Menor de idade';
+            } else if (idade > 18 && idade < 80) {
+                document.getElementById('mensagem').innerText = 'Maior de idade';
+            } else if (idade > 80) {
+                document.getElementById('mensagem').innerText = 'Passou da DATA DE VALIDADE';
+            } else {
+                document.getElementById('mensagem').innerText = 'Tu não existe';
+            }
+        }
+    </script>
+</body>
+</html>
